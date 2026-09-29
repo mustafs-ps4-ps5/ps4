@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Tajawal:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f35 50%, #0d1326 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 40px 50px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 100, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    border-color: rgba(100, 150, 255, 0.3);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9), 0 0 60px rgba(0, 100, 255, 0.1);
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    text-shadow: 0 0 30px rgba(0, 100, 255, 0.2);
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.highlight {
+    background: linear-gradient(135deg, #ff6b35, #ff2e63);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 40px rgba(255, 46, 99, 0.3);
+}
+
+.ps4-text {
+    background: linear-gradient(135deg, #0066ff, #00ccff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ps5-text {
+    background: linear-gradient(135deg, #ff0066, #ff33cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #8899bb;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-top: -5px;
+}
+
+.version-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b35, #ff2e63);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 15px;
+    border-radius: 20px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 46, 99, 0.3);
+}
+
+.separator {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    margin: 20px 0;
+}
+
+#menu {
+    display: block;
+}
+
+.fw-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #aabbdd;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.fw-range {
+    font-size: 14px;
+    color: #7788aa;
+    margin-bottom: 25px;
+}
+
+.range-highlight {
+    background: linear-gradient(135deg, #ff6b35, #ff2e63);
+    padding: 2px 12px;
+    border-radius: 12px;
+    color: white;
+    font-weight: 700;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #003263, #004a8f);
+    color: white;
+    width: 100%;
+    max-width: 400px;
+    height: 56px;
+    padding: 0 25px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: all 0.5s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 74, 143, 0.4);
+}
+
+.btn:active {
+    transform: translateY(0px) scale(0.98);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff2e63, #ff6b35);
+    box-shadow: 0 8px 25px rgba(255, 46, 99, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #ff1a4f, #ff5520);
+    box-shadow: 0 12px 35px rgba(255, 46, 99, 0.5);
+}
+
+.btn-icon {
+    font-size: 20px;
+}
+
+.status-bar {
+    margin: 25px 0 30px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.status-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #8899bb;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.status-text.loading {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.status-text.error {
+    color: #ff2e63;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+footer {
+    margin-top: 20px;
+}
+
+.credit {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    color: #556688;
+    letter-spacing: 2px;
+}
+
+.credit-link {
+    background: linear-gradient(135deg, #ff6b35, #ff2e63);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.credit-link:hover {
+    text-shadow: 0 0 30px rgba(255, 46, 99, 0.4);
+}
+
+.thanks {
+    font-size: 12px;
+    color: #445566;
+    margin-top: 8px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+    
+    .main-title {
+        font-size: 28px;
+    }
+    
+    .subtitle {
+        font-size: 11px;
+        letter-spacing: 5px;
+    }
+    
+    .btn {
+        font-size: 13px;
+        height: 50px;
+        padding: 0 15px;
+    }
+    
+    .fw-title {
+        font-size: 15px;
+    }
+    
+    .status-text {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .main-title {
+        font-size: 22px;
+    }
+    
+    .btn {
+        font-size: 11px;
+        height: 44px;
+        gap: 8px;
+    }
+    
+    .btn-icon {
+        font-size: 16px;
+    }
+}
