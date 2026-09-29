@@ -1,0 +1,24 @@
+CACHE MANIFEST
+# v1.0 - Mustafa ps4 ps5
+
+CACHE:
+index.html
+cachecss.html
+../style.css
+goldhen_2.4b18.10.bin
+css/main.js
+css/misc.js
+css/lapse.js
+css/loader.js
+css/worker.js
+css/workers.js
+css/ps4/constants.js
+css/ps4/userland.js
+css/ps4/kernel.js
+css/ps4/patches/1000.bin
+css/ps4/patches/1050.bin
+css/ps4/patches/1100.bin
+css/ps4/patches/1102.bin
+
+NETWORK:
+*
