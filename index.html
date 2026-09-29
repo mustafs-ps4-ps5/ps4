@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustafa PS4 PS5 Exploit Host</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="main-title">
+                <span class="highlight">Mustafa</span> 
+                <span class="ps4-text">PS4</span> 
+                <span class="ps5-text">PS5</span>
+            </h1>
+            <div class="subtitle">Exploit Host</div>
+            <div class="version-badge">v3.0</div>
+        </header>
+        
+        <hr class="separator">
+
+        <div id="menu">
+            <h2 class="fw-title">Loading...</h2>
+            <p class="fw-range">Detecting <span class="range-highlight">9.00 - 13.00</span></p>
+            
+            <div class="status-bar">
+                <span id="msgs" class="status-text">Starting...</span>
+            </div>
+
+            <footer>
+                <p class="credit">Designed by <a href="#" class="credit-link">Mustafa</a></p>
+                <p class="thanks">Special thanks to all scene developers</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        var msgs = document.getElementById('msgs');
+
+        function updateStatus(msg, isError) {
+            msgs.innerHTML = msg;
+            msgs.className = isError ? 'status-text error' : 'status-text';
+        }
+
+        var uaFull = navigator.userAgent;
+        var match = uaFull.match(/PlayStation 4[ /]([\d.]+)/i);
+        var isPS4 = match !== null;
+        var fwVersion = isPS4 ? match[1] : "Unknown";
+        var fwNum = parseFloat(fwVersion);
+
+        document.addEventListener("DOMContentLoaded", function() {
+            if (!isPS4) {
+                updateStatus('This page is for PS4 only!', true);
+                return;
+            }
+
+            if (fwNum >= 9.00 && fwNum <= 13.00) {
+                updateStatus('Detected PS4 Firmware: ' + fwVersion);
+                
+                setTimeout(function() {
+                    updateStatus('Loading exploit...');
+                    window.location.replace('run/index.html');
+                }, 1500);
+            } else {
+                updateStatus('Unsupported Firmware: ' + fwVersion + ' (Requires 9.00-13.00)', true);
+            }
+        });
+    </script>
+</body>
+</html>
