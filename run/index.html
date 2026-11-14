@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mustafa ps4 ps5 - Exploit Host 9.00-13.00</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">
+            <span class="highlight">Mustafa</span>
+            <span class="ps4-text"> PS4</span>
+            <span class="ps5-text"> PS5</span>
+        </h1>
+        <div class="subtitle">Exploit Host</div>
+        <div class="version-badge">FW 9.00 - 13.00</div>
+        <hr class="separator">
+        
+        <div class="status-bar">
+            <span id="msgs" class="status-text">Loading Exploit... Please Wait</span>
+        </div>
+        
+        <footer>
+            <p class="credit">Designed by: <a href="#" class="credit-link">Mustafa</a></p>
+            <p class="thanks">Special thanks to all scene developers</p>
+        </footer>
+    </div>
+
+<script>
+var uaFull = navigator.userAgent;
+var match = uaFull.match(/PlayStation 4[ /]([\d.]+)/i);
+var isPS4 = match !== null;
+var fwVersion = isPS4 ? match[1] : "Unknown";
+var fwNum = parseFloat(fwVersion);
+var msgs = document.getElementById('msgs');
+
+function updateStatus(msg, isError) {
+    msgs.innerHTML = msg;
+    msgs.className = isError ? 'status-text error' : 'status-text';
+}
+
+function onScriptError() {
+    updateStatus('Content not Found! - Clear Browser Data and Re-Install Cache ...', true);
+}
+
+if (!isPS4) {
+    document.addEventListener("DOMContentLoaded", function() {
+        updateStatus('Only for PS4 with Firmware 9.00 to 13.00', true);
+    });
+} else if (fwNum < 9.00 || fwNum > 13.00) {
+    document.addEventListener("DOMContentLoaded", function() {
+        updateStatus('Unsupported Firmware: ' + fwVersion + ' (Requires 9.00-13.00)', true);
+    });
+} else {
+    var cacheReady = window.applicationCache && window.applicationCache.status !== 0;
+
+    if (!cacheReady) {
+        if (fwNum >= 9.00 && fwNum <= 9.60) {
+            updateStatus('Installing Cache for FW ' + fwVersion + '...', false);
+            setTimeout(function() { window.location.replace("cache900.html"); }, 500);
+        } else if (fwNum >= 10.00 && fwNum <= 11.02) {
+            updateStatus('Installing Cache for FW ' + fwVersion + '...', false);
+            setTimeout(function() { window.location.replace("cachecss.html"); }, 500);
+        } else if (fwNum >= 11.50 && fwNum <= 13.00) {
+            updateStatus('Installing Cache for FW ' + fwVersion + '...', false);
+            setTimeout(function() { window.location.replace("cacheslopkit.html"); }, 500);
+        }
+    } else {
+        if (fwNum >= 9.00 && fwNum <= 9.60) {
+            updateStatus('Detected Firmware: ' + fwVersion, false);
+            setTimeout(function() {
+                updateStatus('Loading exploit...', false);
+                var script = document.createElement('script');
+                script.type = 'module';
+                script.src = "900/alert.js";
+                script.onerror = onScriptError;
+                document.head.appendChild(script);
+            }, 1000);
+        }
+        else if (fwNum >= 10.00 && fwNum <= 11.02) {
+            updateStatus('Detected Firmware: ' + fwVersion, false);
+            setTimeout(function() {
+                updateStatus('Loading exploit...', false);
+                var script = document.createElement('script');
+                script.src = "css/main.js";
+                script.onerror = onScriptError;
+                script.onload = function() {
+                    setTimeout(function() {
+                        if (typeof doJb !== 'undefined') {
+                            updateStatus('Starting exploit...', false);
+                            doJb();
+                        } else {
+                            updateStatus('Exploit function not found. Try refreshing.', true);
+                        }
+                    }, 500);
+                };
+                document.head.appendChild(script);
+            }, 1000);
+        }
+        else if (fwNum >= 11.50 && fwNum <= 12.02) {
+            updateStatus('Detected Firmware: ' + fwVersion, false);
+            setTimeout(function() {
+                updateStatus('Loading exploit...', false);
+                var script = document.createElement('script');
+                script.type = 'module';
+                script.src = "slopkit/chain_lapse.js";
+                script.onerror = onScriptError;
+                document.head.appendChild(script);
+            }, 1000);
+        }
+        else if (fwNum >= 12.50 && fwNum <= 13.00) {
+            updateStatus('Detected Firmware: ' + fwVersion, false);
+            setTimeout(function() {
+                updateStatus('Loading exploit...', false);
+                var script = document.createElement('script');
+                script.type = 'module';
+                script.src = "slopkit/chain_poops.js";
+                script.onerror = onScriptError;
+                document.head.appendChild(script);
+            }, 1000);
+        }
+    }
+}
+</script>
+</body>
+</html>
